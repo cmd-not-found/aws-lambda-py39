@@ -9,12 +9,12 @@ configure_aws_credentials(){
 
 publish_function_code(){
 	echo "Deploying the code itself..."
-	zip -r code.zip . -x \*.git\*
+	zip -r code.zip *.py
 	aws lambda update-function-code --function-name "${INPUT_LAMBDA_FUNCTION_NAME}" --zip-file fileb://code.zip
 }
 
 deploy_lambda_function(){
-	publish_dependencies_as_layer
+	configure_aws_credentials
 	publish_function_code
 }
 

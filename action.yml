@@ -1,6 +1,6 @@
 name: AWS Lambda Zip Deploy - Python
 author: cmd-not-found
-description: Zip deploy to AWS Lambda with requirements in a separate layer.
+description: Zip deploy to AWS Lambda.
 inputs:
   lambda_function_name:
     description: The Lambda function name. Check the AWS docs/readme for examples.
